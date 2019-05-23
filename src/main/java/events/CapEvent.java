@@ -18,8 +18,9 @@ public class CapEvent extends ListenerAdapter {
         String messageSent = event.getMessage().getContentRaw();
         if (messageSent.equalsIgnoreCase("!cap")){
             GuildVoiceState voiceState = event.getMember().getVoiceState();
+
             if (!voiceState.inVoiceChannel()){
-                channel.sendMessage("Please use the space stone to join a voice channel").queue();
+                channel.sendMessage("America's ass is currently busy at the moment").queue();
                 return;
             }
 
@@ -41,6 +42,5 @@ public class CapEvent extends ListenerAdapter {
             audioManager.openAudioConnection(voiceChannel);
             channel.sendMessage("How about a dance?").queue();
         }
-
     }
 }
