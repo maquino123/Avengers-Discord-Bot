@@ -21,7 +21,7 @@ public class CapEvent extends ListenerAdapter {
             TextChannel channel = event.getChannel();
 
             if (!voiceState.inVoiceChannel()){
-                channel.sendMessage("America's ass is currently busy at the moment").queue();
+                channel.sendMessage("Please join a voice channel to use America's ass").queue();
                 return;
             }
 
