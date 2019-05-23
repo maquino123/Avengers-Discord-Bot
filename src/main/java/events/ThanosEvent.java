@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.List;
 
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.VoiceChannel;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -31,12 +33,16 @@ public class ThanosEvent extends ListenerAdapter {
             //TODO: Find a way to bypass that 100 message limit
 
             messages = event.getChannel().getHistory().retrievePast(100).complete();
+            if (messages.contains("!snap")){
+                messages.remove("!snap");
+            }
             for ( int i = 0; i < (messages.size() / 2); i++){
                 int randomIndex = random.nextInt(messages.size());
                 messages.remove(randomIndex);
             }
-            event.getChannel().deleteMessages(messages).queue();
 
+            event.getChannel().deleteMessages(messages).queue();
+            event.getChannel().sendMessage("Perfectly balanced, as all things should be").queue();
         }
     }
 }
