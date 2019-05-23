@@ -1,5 +1,5 @@
 package events;
-
+import events.music.PlayerManager;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.GuildVoiceState;
 import net.dv8tion.jda.api.entities.Member;
@@ -10,14 +10,15 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.managers.AudioManager;
 
 public class CapEvent extends ListenerAdapter {
-    public void onGuildMessageReceived(GuildMessageReceivedEvent event){
 
-        TextChannel channel = event.getChannel();
+    public void onGuildMessageReceived(GuildMessageReceivedEvent event){
         AudioManager audioManager = event.getGuild().getAudioManager();
+        PlayerManager manager = PlayerManager.getInstance();
 
         String messageSent = event.getMessage().getContentRaw();
         if (messageSent.equalsIgnoreCase("!cap")){
             GuildVoiceState voiceState = event.getMember().getVoiceState();
+            TextChannel channel = event.getChannel();
 
             if (!voiceState.inVoiceChannel()){
                 channel.sendMessage("America's ass is currently busy at the moment").queue();
@@ -41,6 +42,10 @@ public class CapEvent extends ListenerAdapter {
 
             audioManager.openAudioConnection(voiceChannel);
             channel.sendMessage("How about a dance?").queue();
+            manager.loadAndPlay(event.getChannel(), "https://www.youtube.com/watch?v=Chs2bmqzyUs");
+
+            manager.getGuildMusicManager(event.getGuild()).player.setVolume(10);
+
         }
     }
 }
