@@ -9,6 +9,8 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.managers.AudioManager;
 
+import java.util.Random;
+
 public class CapEvent extends ListenerAdapter {
 
     public void onGuildMessageReceived(GuildMessageReceivedEvent event){
@@ -41,8 +43,22 @@ public class CapEvent extends ListenerAdapter {
             }
 
             audioManager.openAudioConnection(voiceChannel);
-            channel.sendMessage("How about a dance?").queue();
-            manager.loadAndPlay(event.getChannel(), "https://www.youtube.com/watch?v=Chs2bmqzyUs");
+            Random random = new Random();
+            String[] channelMessages = new String[]{"How about a dance?", "Feeling a little patriotic..."};
+            int randomIndex = random.nextInt(channelMessages.length);
+            String randomMessage = channelMessages[randomIndex];
+
+            if (channelMessages[0] == randomMessage){
+                channel.sendMessageFormat(channelMessages[0]).queue();
+                manager.loadAndPlay(event.getChannel(), "https://www.youtube.com/watch?v=Chs2bmqzyUs");
+                return;
+            }
+
+            if (channelMessages[1] == randomMessage){
+                channel.sendMessageFormat(channelMessages[1]).queue();
+                manager.loadAndPlay(event.getChannel(), "https://www.youtube.com/watch?v=Go_Xzb3ZN4M");
+                return;
+            }
 
             manager.getGuildMusicManager(event.getGuild()).player.setVolume(10);
 

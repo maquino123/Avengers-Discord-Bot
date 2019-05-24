@@ -38,7 +38,7 @@ public class ThorEvent extends ListenerAdapter {
 
 
             event.getGuild().getController().ban(target, 1).queue();
-            channel.sendMessageFormat("Thor has banned %s", member).queue();
+            channel.sendMessageFormat("%s has banned %s by the power of Thor!", member, target).queue();
         }
     }
 }
