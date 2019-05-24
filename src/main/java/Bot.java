@@ -1,6 +1,7 @@
 import events.CapEvent;
 import events.LeaveCommand;
 import events.ThanosEvent;
+import events.ThorEvent;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
@@ -14,5 +15,6 @@ public class Bot {
         jda.addEventListener(new ThanosEvent());
         jda.addEventListener(new CapEvent());
         jda.addEventListener(new LeaveCommand());
+        jda.addEventListener(new ThorEvent());
     }
 }

@@ -21,6 +21,7 @@ public class PlayerManager {
     private PlayerManager(){
         this.musicManagers = new HashMap<>();
         this.playerManager = new DefaultAudioPlayerManager();
+
         //register from remote and local sources
         AudioSourceManagers.registerRemoteSources(playerManager);
         AudioSourceManagers.registerLocalSource(playerManager);
