@@ -1,5 +1,6 @@
 package events.music;
 
+import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import com.sedmelluq.discord.lavaplayer.player.AudioLoadResultHandler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
@@ -50,7 +51,7 @@ public class PlayerManager {
         playerManager.loadItemOrdered(musicManager, trackUrl, new AudioLoadResultHandler() {
             @Override
             public void trackLoaded(AudioTrack audioTrack) {
-                channel.sendMessage("Adding to queue " + audioTrack.getInfo().title).queue();
+                channel.sendMessage("Adding to queue:" + audioTrack.getInfo().title).queue();
 
                 play(musicManager, audioTrack);
             }
