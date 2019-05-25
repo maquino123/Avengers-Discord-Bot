@@ -9,26 +9,24 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.managers.AudioManager;
 
-import java.util.Random;
-
-public class CapEvent extends ListenerAdapter {
-
+public class HulkEvent extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event){
         AudioManager audioManager = event.getGuild().getAudioManager();
         PlayerManager manager = PlayerManager.getInstance();
 
-        String messageSent = event.getMessage().getContentRaw();
-        if (messageSent.equalsIgnoreCase("!cap")){
+        String message = event.getMessage().getContentRaw();
+
+        if (message.equalsIgnoreCase("!smash")){
             GuildVoiceState voiceState = event.getMember().getVoiceState();
             TextChannel channel = event.getChannel();
 
             if (!voiceState.inVoiceChannel()){
-                channel.sendMessage("Please join a voice channel to use America's ass").queue();
+                channel.sendMessageFormat("Please join a voice channel to use Hulk").queue();
                 return;
             }
 
             if (audioManager.isConnected()){
-                channel.sendMessage("On your left").queue();
+                channel.sendMessage("Hulk is already here").queue();
                 return;
             }
 
@@ -38,32 +36,14 @@ public class CapEvent extends ListenerAdapter {
 
             //Check if selfmember can connect to voice channel
             if (!selfMember.hasPermission(voiceChannel, Permission.VOICE_CONNECT)){
-                channel.sendMessageFormat("Agent Carter does not give you permission to join %s", voiceChannel).queue();
+                channel.sendMessageFormat("Dr.Banner does not give you permission to join %s", voiceChannel).queue();
                 return;
             }
 
             audioManager.openAudioConnection(voiceChannel);
-            Random random = new Random();
-            //Randomize between the 2 songs
-            //TODO add more songs if you want
-            String[] channelMessages = new String[]{"How about a dance?", "Feeling a little patriotic..."};
-            int randomIndex = random.nextInt(channelMessages.length);
-            String randomMessage = channelMessages[randomIndex];
-
-            if (channelMessages[0] == randomMessage){
-                channel.sendMessageFormat(channelMessages[0]).queue();
-                manager.loadAndPlay(event.getChannel(), "https://www.youtube.com/watch?v=Chs2bmqzyUs");
-                return;
-            }
-
-            if (channelMessages[1] == randomMessage){
-                channel.sendMessageFormat(channelMessages[1]).queue();
-                manager.loadAndPlay(event.getChannel(), "https://www.youtube.com/watch?v=Go_Xzb3ZN4M");
-                return;
-            }
-
+            channel.sendMessageFormat("The sun's getting real low %s, why don't we calm down", event.getMember()).queue();
+            manager.loadAndPlay(event.getChannel(), "https://www.youtube.com/playlist?list=PLXzS0Kp7vtLrupaI5bAbpKEJSEKX4__kr");
             manager.getGuildMusicManager(event.getGuild()).player.setVolume(10);
-
         }
     }
 }

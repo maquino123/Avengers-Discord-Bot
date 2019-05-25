@@ -14,5 +14,6 @@ public class Bot {
         jda.addEventListener(new LeaveCommand());
         jda.addEventListener(new ThorEvent());
         jda.addEventListener(new HawkeyeEvent());
+        jda.addEventListener(new HulkEvent());
     }
 }

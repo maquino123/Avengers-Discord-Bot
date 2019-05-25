@@ -18,7 +18,7 @@ public class HawkeyeEvent extends ListenerAdapter {
             Member selfMember = event.getGuild().getSelfMember(); //Get bot
 
             if (message.length < 2){
-                channel.sendMessage("Hawekeye does not know who to shoot!").queue();
+                channel.sendMessage("Hawekeye does not know who to kick!").queue();
                 return;
             }
 
