@@ -1,4 +1,4 @@
-package events;
+package events.hero;
 import events.music.PlayerManager;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.GuildVoiceState;
@@ -27,10 +27,10 @@ public class CapEvent extends ListenerAdapter {
                 return;
             }
 
-            if (audioManager.isConnected()){
-                channel.sendMessage("On your left").queue();
-                return;
-            }
+            //if (audioManager.isConnected()){
+             //   channel.sendMessage("On your left").queue();
+             //   return;
+            //}
 
             //Get the voice channel the member is in
             VoiceChannel voiceChannel = voiceState.getChannel();

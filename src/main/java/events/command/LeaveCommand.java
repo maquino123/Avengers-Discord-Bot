@@ -1,4 +1,4 @@
-package events;
+package events.command;
 
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.TextChannel;
@@ -31,5 +31,6 @@ public class LeaveCommand extends ListenerAdapter {
             Member member = event.getMember();
             channel.sendMessageFormat("Hey %s, I don't feel so good...", member).queue();
         }
+
     }
 }

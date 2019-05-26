@@ -10,6 +10,7 @@ import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.TextChannel;
 
+import java.util.Random;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -57,15 +58,29 @@ public class PlayerManager {
 
             @Override
             public void playlistLoaded(AudioPlaylist audioPlaylist) {
-                AudioTrack firstTrack = audioPlaylist.getSelectedTrack();
+                //AudioTrack firstTrack = audioPlaylist.getSelectedTrack();
+                Random random = new Random();
 
-                if (firstTrack == null){
-                    firstTrack = audioPlaylist.getTracks().get(0);
-                }
+                //if (firstTrack == null) {
+                //    firstTrack = audioPlaylist.getTracks().remove(0);
+                //}
 
                 channel.sendMessage("Found a playlist!: " + audioPlaylist.getName()).queue();
+                //int randomIndex = random.nextInt(audioPlaylist.getTracks().size());
 
-                play(musicManager, firstTrack);
+                //play(musicManager, firstTrack);
+
+                //All tracks added to queue
+                //audioPlaylist.getTracks().forEach(musicManager.scheduler::queue);
+                //play(musicManager, track);
+
+
+                for (int i = 0; i < audioPlaylist.getTracks().size(); i++) {
+                    int randomIndex = random.nextInt(audioPlaylist.getTracks().size());
+                    AudioTrack randomTrack = audioPlaylist.getTracks().get(randomIndex);
+                    play(musicManager, randomTrack);
+                }
+
             }
 
             @Override

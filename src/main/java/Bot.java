@@ -1,4 +1,6 @@
-import events.*;
+import events.command.LeaveCommand;
+import events.command.ShutdownCommand;
+import events.hero.*;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
@@ -15,5 +17,6 @@ public class Bot {
         jda.addEventListener(new ThorEvent());
         jda.addEventListener(new HawkeyeEvent());
         jda.addEventListener(new HulkEvent());
+        jda.addEventListener(new ShutdownCommand());
     }
 }

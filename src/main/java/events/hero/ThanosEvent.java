@@ -1,4 +1,4 @@
-package events;
+package events.hero;
 
 import java.util.Random;
 import java.util.List;

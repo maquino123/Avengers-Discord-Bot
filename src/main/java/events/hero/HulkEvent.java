@@ -1,4 +1,4 @@
-package events;
+package events.hero;
 import events.music.PlayerManager;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.GuildVoiceState;
@@ -25,10 +25,10 @@ public class HulkEvent extends ListenerAdapter {
                 return;
             }
 
-            if (audioManager.isConnected()){
-                channel.sendMessage("Hulk is already here").queue();
-                return;
-            }
+            //if (audioManager.isConnected()){
+             //   channel.sendMessage("Hulk is already here").queue();
+             //   return;
+            //}
 
             //Get the voice channel the member is in
             VoiceChannel voiceChannel = voiceState.getChannel();
@@ -41,7 +41,7 @@ public class HulkEvent extends ListenerAdapter {
             }
 
             audioManager.openAudioConnection(voiceChannel);
-            channel.sendMessageFormat("The sun's getting real low %s, why don't we calm down", event.getMember()).queue();
+            channel.sendMessageFormat("The sun's getting real low %s, why don't we chill out", event.getMember()).queue();
             manager.loadAndPlay(event.getChannel(), "https://www.youtube.com/playlist?list=PLXzS0Kp7vtLrupaI5bAbpKEJSEKX4__kr");
             manager.getGuildMusicManager(event.getGuild()).player.setVolume(10);
         }
