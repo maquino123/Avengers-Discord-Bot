@@ -1,2 +1,2 @@
-# MarvelQuote_Discord_Bot
-A bot that generates a memorable quote from the Marvel Cinematic Universe
+# Avengers Discord Bot
+A Discord bot based on the original Avengers.
