@@ -74,13 +74,11 @@ public class PlayerManager {
                 //audioPlaylist.getTracks().forEach(musicManager.scheduler::queue);
                 //play(musicManager, track);
 
-
                 for (int i = 0; i < audioPlaylist.getTracks().size(); i++) {
                     int randomIndex = random.nextInt(audioPlaylist.getTracks().size());
                     AudioTrack randomTrack = audioPlaylist.getTracks().get(randomIndex);
                     play(musicManager, randomTrack);
                 }
-
             }
 
             @Override

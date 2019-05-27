@@ -18,5 +18,6 @@ public class Bot {
         jda.addEventListener(new HawkeyeEvent());
         jda.addEventListener(new HulkEvent());
         jda.addEventListener(new ShutdownCommand());
+        jda.addEventListener(new JarvisEvent());
     }
 }
