@@ -31,7 +31,7 @@ public class JarvisEvent extends ListenerAdapter {
                 channel.sendMessageFormat("What is your command %s?", member).queue();
                 return;
             }
-            if(message[1].equalsIgnoreCase("play")){
+            if (message[1].equalsIgnoreCase("play")){
                 GuildVoiceState voiceState = event.getMember().getVoiceState();
                 if (!voiceState.inVoiceChannel()){
                     channel.sendMessage("Please join a voice channel to use JARVIS").queue();
@@ -58,6 +58,7 @@ public class JarvisEvent extends ListenerAdapter {
                 String trackUrl = message[2];
                 manager.loadAndPlay(event.getChannel(), trackUrl);
                 manager.getGuildMusicManager(event.getGuild()).player.setVolume(10);
+                return;
             }
 
             if (message[1].equalsIgnoreCase("define")){
@@ -66,18 +67,18 @@ public class JarvisEvent extends ListenerAdapter {
                     return;
                 }
                 try{
-                    //TODO define words containing spaces
+                    //TODO define words containing , case-sensitive words
                     WebScraper webScraper = WebScraper.getInstance();
                     String word = message[2];
                     webScraper.defineWord(word, event);
+                    return;
                 }catch (IOException e){
                     e.printStackTrace();
                 }
             }
-            else{
-                channel.sendMessage("Unknown command").queue();
-                return;
-            }
+            channel.sendMessage("Unknown command").queue();
+            return;
+
         }
     }
 }
