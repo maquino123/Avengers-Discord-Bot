@@ -13,10 +13,10 @@ public class WebScraper extends ListenerAdapter {
 
     private static WebScraper INSTANCE;
 
-    public Document test(String input, GuildMessageReceivedEvent event) throws IOException{
+    public Document defineWord(String input, GuildMessageReceivedEvent event) throws IOException{
         String messageReplace = input.replace(" ", "%20");
         final Document document = Jsoup.connect("https://www.urbandictionary.com/define.php?term=" + messageReplace).get();
-        Elements word = document.select("div.def-panel");
+        Elements word = document.select("div.def-panel:first-child");
         String meaning = word.select("div.meaning").text();
         TextChannel channel = event.getChannel();
         channel.sendMessageFormat("Here's what I found for %s", input).queue();

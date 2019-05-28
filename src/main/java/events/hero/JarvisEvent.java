@@ -14,6 +14,7 @@ import net.dv8tion.jda.api.managers.AudioManager;
 import events.web_scrape.WebScraper;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 
 public class JarvisEvent extends ListenerAdapter {
@@ -65,9 +66,10 @@ public class JarvisEvent extends ListenerAdapter {
                     return;
                 }
                 try{
-                    String word = message[2];
+                    //TODO define words containing spaces
                     WebScraper webScraper = WebScraper.getInstance();
-                    webScraper.test(word, event);
+                    String word = message[2];
+                    webScraper.defineWord(word, event);
                 }catch (IOException e){
                     e.printStackTrace();
                 }
