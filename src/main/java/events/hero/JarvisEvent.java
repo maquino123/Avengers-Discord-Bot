@@ -11,6 +11,10 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.managers.AudioManager;
 
+import events.web_scrape.WebScraper;
+
+import java.io.IOException;
+
 
 public class JarvisEvent extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event){
@@ -53,6 +57,20 @@ public class JarvisEvent extends ListenerAdapter {
                 String trackUrl = message[2];
                 manager.loadAndPlay(event.getChannel(), trackUrl);
                 manager.getGuildMusicManager(event.getGuild()).player.setVolume(10);
+            }
+
+            if (message[1].equalsIgnoreCase("define")){
+                if (message.length < 3){
+                    channel.sendMessage("JARVIS does not know what word to define").queue();
+                    return;
+                }
+                try{
+                    String word = message[2];
+                    WebScraper webScraper = WebScraper.getInstance();
+                    webScraper.test(word, event);
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
             }
             else{
                 channel.sendMessage("Unknown command").queue();

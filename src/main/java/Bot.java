@@ -1,6 +1,7 @@
 import events.command.LeaveCommand;
 import events.command.ShutdownCommand;
 import events.hero.*;
+import events.web_scrape.WebScraper;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
