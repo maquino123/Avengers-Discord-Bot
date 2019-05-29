@@ -1,16 +1,15 @@
 import events.command.LeaveCommand;
 import events.command.ShutdownCommand;
 import events.hero.*;
-import events.web_scrape.WebScraper;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
-public class Bot {
+public class Bot extends resource{
 
     public static void main(String[] args) throws Exception{
 
         //Token for bot
-        JDA jda = new JDABuilder("NTgwMDY4NTU5NDk4MTE3MTQz.XOlxnQ.EV7XbK-eV3wCUgIM0kKCDVb1KhI").build();
+        JDA jda = new JDABuilder(resource.token).build();
         
         jda.addEventListener(new ThanosEvent());
         jda.addEventListener(new CapEvent());
