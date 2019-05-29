@@ -1,3 +1,7 @@
+import com.karumi.marvelapiclient.ComicApiClient;
+import com.karumi.marvelapiclient.MarvelApiConfig;
+import com.karumi.marvelapiclient.model.*;
+import events.comic.ComicClient;
 import events.command.LeaveCommand;
 import events.command.ShutdownCommand;
 import events.hero.*;
@@ -9,8 +13,11 @@ public class Bot extends resource{
     public static void main(String[] args) throws Exception{
 
         //Token for bot
-        JDA jda = new JDABuilder(resource.token).build();
-        
+        JDA jda = new JDABuilder(resource.TOKEN).build();
+        ComicsQuery charactersQuery = ComicsQuery.Builder.create().withOffset(0).withLimit(10).build();
+        MarvelResponse<ComicsDto> all = comicApiClient.getAll(charactersQuery);
+
+
         jda.addEventListener(new ThanosEvent());
         jda.addEventListener(new CapEvent());
         jda.addEventListener(new LeaveCommand());
