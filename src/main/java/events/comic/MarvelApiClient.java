@@ -47,6 +47,7 @@ public class MarvelApiClient {
                 marvelDescription = marvelError.getMessage();
                 if (marvelDescription == null || "".equals(marvelDescription)){
                     marvelDescription = marvelError.getStatus();
+                    return;
                 }
             }catch(IOException e){
             }
