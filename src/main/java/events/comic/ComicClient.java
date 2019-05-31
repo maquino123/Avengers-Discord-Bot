@@ -10,9 +10,7 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import retrofit2.Call;
 import retrofit2.http.QueryMap;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public final class ComicClient extends MarvelApiClient {
     public ComicClient(MarvelApiConfig marvelApiConfig){
@@ -38,12 +36,24 @@ public final class ComicClient extends MarvelApiClient {
             CharacterDto characterDto = charactersDto.getCharacters().get(0);
             MarvelResponse<CharacterDto> characterResponse = new MarvelResponse<>(characters);
             characterResponse.setResponse(characterDto);
-            String comic = characterDto.getComics().getItems().get(0).getName();
+
+            List<ComicResourceDto> comic = characterDto.getComics().getItems();
+            String name = characterDto.getName();
             String id = characterDto.getId();
+            String description = characterDto.getDescription();
             String thumbnail = characterDto.getThumbnail().getImageUrl(MarvelImage.Size.PORTRAIT_FANTASTIC);
-            channel.sendMessageFormat("The comic character is %s", characterName).queue();
+
+            //Initialize new list
+            List<String> comicList = new ArrayList<>();
+            for (int i = 0; i < comic.size(); i++){
+                String comicName = comic.get(i).getName();
+                comicList.add(comicName);
+            }
+            String formattedComicList = comicList.toString().replace("[", "").replace("]","");
+            channel.sendMessageFormat("Name: %s", name).queue();
             channel.sendMessageFormat("ID: %s", id).queue();
-            channel.sendMessageFormat("Comics: %s", comic).queue();
+            channel.sendMessageFormat("Description: %s", description).queue();
+            channel.sendMessageFormat("Comics: %s", formattedComicList).queue();
             eb.setImage(thumbnail);
             channel.sendMessage(eb.build()).queue();
             return characterResponse;
