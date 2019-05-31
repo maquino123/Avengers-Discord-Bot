@@ -10,7 +10,9 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import retrofit2.Call;
 import retrofit2.http.QueryMap;
 
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public final class ComicClient extends MarvelApiClient {
     public ComicClient(MarvelApiConfig marvelApiConfig){
@@ -50,10 +52,11 @@ public final class ComicClient extends MarvelApiClient {
                 comicList.add(comicName);
             }
             String formattedComicList = comicList.toString().replace("[", "").replace("]","");
-            channel.sendMessageFormat("Name: %s", name).queue();
-            channel.sendMessageFormat("ID: %s", id).queue();
-            channel.sendMessageFormat("Description: %s", description).queue();
-            channel.sendMessageFormat("Comics: %s", formattedComicList).queue();
+            eb.setTitle("Name: " + name);
+            eb.setColor(Color.red);
+            eb.addField("ID: ", id, false);
+            eb.addField("Description: ", description, false );
+            eb.addField("Comics: ", formattedComicList, true);
             eb.setImage(thumbnail);
             channel.sendMessage(eb.build()).queue();
             return characterResponse;
