@@ -24,7 +24,13 @@ public class ComicEvent extends ListenerAdapter{
                     comicClient.getComic("", event);
                     return;
                 }
-                String character = message[1];
+                StringBuilder characterBuilder = new StringBuilder();
+                //Start at index 1 from message since index 0 is !comic
+                for (int i = 1; i < message.length; i++){
+                    characterBuilder.append(message[i]);
+                    characterBuilder.append(" ");
+                }
+                String character = characterBuilder.toString();
                 comicClient.getComic(character, event);
                 return;
             }

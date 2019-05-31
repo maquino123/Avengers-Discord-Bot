@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9293483a-ea02-4e1d-9353-d79f6a120288" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/events/comic/ComicClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/comic/ComicClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/events/comic/ComicEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/comic/ComicEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Bot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/comic/CharacterApiRest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/comic/CharacterApiRest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/comic/ComicClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/comic/ComicClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/comic/ComicEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/comic/ComicEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/comic/MarvelApiClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/comic/MarvelApiClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/comic/MarvelError.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/comic/MarvelError.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/command/LeaveCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/command/LeaveCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/command/ShutdownCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/command/ShutdownCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/hero/CapEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/hero/CapEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/hero/HawkeyeEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/hero/HawkeyeEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/hero/HulkEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/hero/HulkEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/hero/JarvisEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/hero/JarvisEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/hero/ThanosEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/hero/ThanosEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/hero/ThorEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/hero/ThorEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/music/AudioPlayerSendHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/music/AudioPlayerSendHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/music/GuildMusicManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/music/GuildMusicManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/music/PlayerManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/music/PlayerManager$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/music/PlayerManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/music/PlayerManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/music/TrackScheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/music/TrackScheduler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/web_scrape/WebScraper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/events/web_scrape/WebScraper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resource.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ComicClient.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ComicClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/events/comic/ComicClient.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -52,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComicEvent.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ComicEvent.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/events/comic/ComicEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="18" column="75" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
+            <state relative-caret-position="275">
+              <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,8 +115,8 @@
         <option value="$PROJECT_DIR$/src/main/java/events/hero/ThorEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/resource.java" />
         <option value="$PROJECT_DIR$/src/main/java/events/comic/ComicResource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/events/comic/ComicEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/events/comic/ComicClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/events/comic/ComicEvent.java" />
       </list>
     </option>
   </component>
@@ -697,16 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/events/comic/ComicEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="18" column="75" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/events/comic/ComicResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -722,6 +689,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#614#615#0" expanded="true" />
             <element signature="e#652#653#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/events/comic/ComicEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
