@@ -1,3 +1,4 @@
 .idea
+target
 src/main/java/resource.java
 src/main/java/events/comic/ComicResource.java
