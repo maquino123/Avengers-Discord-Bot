@@ -43,6 +43,9 @@ public final class ComicClient extends MarvelApiClient {
             String name = characterDto.getName();
             String id = characterDto.getId();
             String description = characterDto.getDescription();
+            if (description.equals("")){
+                description = "No description could be found for this character";
+            }
             String thumbnail = characterDto.getThumbnail().getImageUrl(MarvelImage.Size.PORTRAIT_FANTASTIC);
 
             //Initialize new list
@@ -63,7 +66,7 @@ public final class ComicClient extends MarvelApiClient {
 
 
         }else{
-            channel.sendMessageFormat("The comic for %s could not be found", characterName).queue();
+            channel.sendMessageFormat("The comic for %scould not be found", characterName).queue();
             throw new MarvelApiException("Comic not found", null);
         }
     }

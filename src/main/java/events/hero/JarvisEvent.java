@@ -69,14 +69,23 @@ public class JarvisEvent extends ListenerAdapter {
                 try{
                     //TODO define words containing , case-sensitive words
                     WebScraper webScraper = WebScraper.getInstance();
-                    String word = message[2];
+                    StringBuilder wordBuilder = new StringBuilder();
+                    for (int i = 2; i < message.length; i++){
+                        if (i == message.length - 1){
+                            wordBuilder.append(message[i]);
+                            break;
+                        }
+                        wordBuilder.append(message[i]);
+                        wordBuilder.append(" ");
+                    }
+                    String word = wordBuilder.toString();
                     webScraper.defineWord(word, event);
                     return;
                 }catch (IOException e){
                     e.printStackTrace();
                 }
             }
-            channel.sendMessage("Unknown command").queue();
+            channel.sendMessageFormat("Sorry %s I couldn't recognize that command", member).queue();
             return;
 
         }

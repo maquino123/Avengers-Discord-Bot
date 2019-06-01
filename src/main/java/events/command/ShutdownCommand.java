@@ -19,6 +19,7 @@ public class ShutdownCommand extends ListenerAdapter {
             guildMusicManager.player.setPaused(false);  //Not paused
 
             channel.sendMessage("Stopping the player and clearing the queue").queue();
+            return;
         }
     }
 }

@@ -1,15 +1,9 @@
-import com.karumi.marvelapiclient.MarvelApiConfig;
-import com.karumi.marvelapiclient.MarvelApiException;
-import events.comic.ComicClient;
 import events.comic.ComicEvent;
 import events.command.LeaveCommand;
 import events.command.ShutdownCommand;
 import events.hero.*;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.entities.TextChannel;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class Bot extends resource {
 
@@ -17,7 +11,6 @@ public class Bot extends resource {
 
         //Token for bot
         JDA jda = new JDABuilder(resource.TOKEN).build();
-
 
         jda.addEventListener(new ThanosEvent());
         jda.addEventListener(new CapEvent());
