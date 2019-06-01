@@ -3,3 +3,6 @@ target
 src/main/java/resource.java
 src/main/java/events/comic/ComicResource.java
 Procfile
+system.properties
+resources
+out
