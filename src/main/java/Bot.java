@@ -4,6 +4,7 @@ import events.command.ShutdownCommand;
 import events.hero.*;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import org.discordbots.api.client.DiscordBotListAPI;
 
 public class Bot extends resource {
 
@@ -11,6 +12,14 @@ public class Bot extends resource {
 
         //Token for bot
         JDA jda = new JDABuilder(resource.TOKEN).build();
+
+        DiscordBotListAPI api = new DiscordBotListAPI.Builder()
+                .token(resource.TOKEN)
+                .botId("Avengers Bot")
+                .build();
+
+        //Set number of servers
+        api.setStats(jda.getGuilds().size());
 
         jda.addEventListener(new ThanosEvent());
         jda.addEventListener(new CapEvent());
