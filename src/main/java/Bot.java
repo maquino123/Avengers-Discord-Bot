@@ -14,7 +14,7 @@ public class Bot extends resource {
         JDA jda = new JDABuilder(resource.TOKEN).build();
 
         DiscordBotListAPI api = new DiscordBotListAPI.Builder()
-                .token(resource.TOKEN)
+                .token(resource.DISCORD_API_TOKEN)
                 .botId("Avengers Bot")
                 .build();
 
