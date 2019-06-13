@@ -4,6 +4,7 @@ import events.command.ShutdownCommand;
 import events.hero.*;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Guild;
 import org.discordbots.api.client.DiscordBotListAPI;
 
 public class Bot extends resource {
@@ -15,7 +16,7 @@ public class Bot extends resource {
 
         DiscordBotListAPI api = new DiscordBotListAPI.Builder()
                 .token(resource.DISCORD_API_TOKEN)
-                .botId("Avengers Bot")
+                .botId(BOT_ID)
                 .build();
 
         //Set number of servers
