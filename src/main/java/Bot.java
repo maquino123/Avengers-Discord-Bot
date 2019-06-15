@@ -14,14 +14,6 @@ public class Bot extends resource {
         //Token for bot
         JDA jda = new JDABuilder(resource.TOKEN).build();
 
-        DiscordBotListAPI api = new DiscordBotListAPI.Builder()
-                .token(resource.DISCORD_API_TOKEN)
-                .botId(BOT_ID)
-                .build();
-
-        //Set number of servers
-        api.setStats(jda.getGuilds().size());
-
         jda.addEventListener(new ThanosEvent());
         jda.addEventListener(new CapEvent());
         jda.addEventListener(new LeaveCommand());
