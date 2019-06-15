@@ -1,6 +1,8 @@
 # Avengers Discord Bot
 A multipurpose bot to learn about your favorite Marvel heroes, play music, define words, and moderate your channel! This bot can also be helpful for people who want to learn how to make a Discord Bot using the JDA library. I made this so that new users can look at the methods that I've used for various commands as well as to give some ideas for their own Discord Bot.
 
+[Feel free to upvote and use my bot here!](https://discordbots.org/bot/580068559498117143)
+
 ## What I Used to Build This Bot
 There are several APIs that I've used for this Bot <br />
 • [JDA](https://github.com/DV8FromTheWorld/JDA) (Provides wrapping of the Discord REST API) <br />
