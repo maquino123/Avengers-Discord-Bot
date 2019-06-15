@@ -29,6 +29,7 @@ public class ComicEvent extends ListenerAdapter {
                 return;
             }
         } catch (MarvelApiException e) {
+            channel.sendMessage("An error occured with the Marvel API").queue();
             return;
         }
     }
