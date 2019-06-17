@@ -67,7 +67,7 @@ public final class ComicClient extends MarvelApiClient {
 
         }else{
             channel.sendMessageFormat("The comic for %scould not be found", characterName).queue();
-            throw new MarvelApiException("Comic not found", null);
+            return null;
         }
     }
 }
